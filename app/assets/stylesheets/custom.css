@@ -1,0 +1,11 @@
+.card-width {
+	margin:auto;
+}
+.show_card p {
+	font-size: 20px;
+	color: green;
+}
+.show_card strong{
+	font-size: 25px;
+	color: black;
+}
