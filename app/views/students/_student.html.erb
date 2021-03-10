@@ -13,7 +13,16 @@
   <td><%= student.city %></td>
   <td><%= student.state %></td>
   <td><%= student.pincode %></td>
-  <td><%= link_to 'Show', student ,class: "btn btn-success text-white"%></td>
-  <td><%= link_to 'Edit', edit_student_path(student),class: "btn btn-primary text-white" %></td>
-  <td><%= button_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } , class: "btn btn-danger"%></td>
+  <td>
+  	<div class="dropdown">
+	  	<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+	    Action
+	  	</button>
+		  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+		    <%= link_to 'Show', student ,class: "dropdown-item"%>
+		    <%= link_to 'Edit', edit_student_path(student),class: "dropdown-item" %>
+		  	<%= button_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } , class: "dropdown-item" %>
+		  </div>
+		</div>
+  </td>
 </tr>
