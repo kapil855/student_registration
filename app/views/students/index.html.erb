@@ -1,4 +1,16 @@
 <p id="notice"><%= notice %></p>
+<%= search_form_for @q do |f|%>
+  <div>
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name_cont %>
+  </div>
+  <div>
+    <%= f.label :email %>
+    <%= f.text_field :email_cont %>
+  </div>
+  <%= f.submit "Search", class: "btn btn-primary" %>
+  <%= link_to "Clear", request.path, class: "btn btn-danger text-white" %>
+<% end %>
 <table class="table-responsive table-bordered table-striped text-center mb-3">
   <%= render 'table_header' %>
   <tbody>

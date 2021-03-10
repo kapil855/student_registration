@@ -3,7 +3,9 @@ class StudentsController < ApplicationController
 
   # GET /students or /students.json
   def index
-    @students = Student.page params[:page]
+    #@students = Student.page params[:page]
+    @q = Student.ransack(params[:q])
+    @students = @q.result.page(params[:page]) 
   end
 
   # GET /students/1 or /students/1.json
