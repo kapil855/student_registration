@@ -1,0 +1,19 @@
+<tr>
+  <td><%= student.full_name %></td>
+  <td><%= student.email %></td>
+  <td><%= student.gender %></td>
+  <td><%= formatted_date(student.date_of_birth) %></td>
+  <td><%= student.contact_no %></td>
+  <td><%= student.qualification %></td>
+  <td><%= student.passout_pursuing %></td>
+  <td><%= formatted_date(student.date_of_joining) %></td>
+  <td><%= student.course %></td>
+  <td><%= student.address %></td>
+  <td><%= student.address2 %></td>
+  <td><%= student.city %></td>
+  <td><%= student.state %></td>
+  <td><%= student.pincode %></td>
+  <td><%= link_to 'Show', student ,class: "btn btn-success text-white"%></td>
+  <td><%= link_to 'Edit', edit_student_path(student),class: "btn btn-primary text-white" %></td>
+  <td><%= button_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } , class: "btn btn-danger"%></td>
+</tr>
