@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-<table class="table-responsive table-bordered table-striped text-center">
+<table class="table-responsive table-bordered table-striped text-center mb-3">
   <%= render 'table_header' %>
   <tbody>
     <% @students.each do |student| %>
@@ -7,5 +7,6 @@
     <% end %>
   </tbody>
 </table>
+<%= paginate @students %>
   <br>
 <%= link_to 'New Student', new_student_path %>

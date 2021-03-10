@@ -33,6 +33,8 @@ class Student < ApplicationRecord
   	#"#{first_name} #{middle_name} #{last_name}"
   	[first_name, middle_name, last_name].join(' ').capitalize
 	end
+
+	paginates_per 2
 end
 
 
