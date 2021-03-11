@@ -25,16 +25,16 @@ class Student < ApplicationRecord
 		'ITI (Computer Science)'
 	].freeze
 
-	validates :first_name, :last_name, presence: { message: 'must be given please' }
-	validates :email, format: { with: /\A[^@\s]+@[^@\s]+\z/ }, presence: true
-	validates :contact_no,length: {is: 10}, format: {with: /[0-9]/},presence: true
-	validates :date_of_birth,:date_of_joining, presence: true
+	#validates :first_name, :last_name, presence: { message: 'must be given please' }
+	#validates :email, format: { with: /\A[^@\s]+@[^@\s]+\z/ }, presence: true
+	#validates :contact_no,length: {is: 10}, format: {with: /[0-9]/},presence: true
+	#validates :date_of_birth,:date_of_joining, presence: true
 	def full_name
-  	#"#{first_name} #{middle_name} #{last_name}"
-  	[first_name, middle_name, last_name].join(' ').capitalize
+  		#"#{first_name} #{middle_name} #{last_name}"
+  		[first_name, middle_name, last_name].join(' ').capitalize
 	end
 
-	paginates_per 2
+	paginates_per 10
 end
 
 
