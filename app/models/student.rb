@@ -30,11 +30,19 @@ class Student < ApplicationRecord
 	#validates :contact_no,length: {is: 10}, format: {with: /[0-9]/},presence: true
 	#validates :date_of_birth,:date_of_joining, presence: true
 	def full_name
-  		#"#{first_name} #{middle_name} #{last_name}"
-  		[first_name, middle_name, last_name].join(' ').capitalize
+		#"#{first_name} #{middle_name} #{last_name}"
+		[first_name, middle_name, last_name].join(' ').capitalize
 	end
 
-	paginates_per 10
+	ransacker :full_name, formatter: proc { |v| v.mb_chars.downcase.to_s } do |parent|
+	  Arel::Nodes::NamedFunction.new('LOWER',
+	   [Arel::Nodes::NamedFunction.new('concat_ws',
+	    [Arel::Nodes.build_quoted(' '), parent.table[:first_name], 
+	  parent.table[:middle_name], parent.table[:last_name]])
+	   ])
+	end
+
+	paginates_per 12
 end
 
 

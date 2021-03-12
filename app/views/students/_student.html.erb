@@ -1,21 +1,24 @@
 <tr>
   <td><%= student.full_name %></td>
   <td><%= student.email %></td>
-  <td><%= student.gender %></td>
-  <td><%= formatted_date(student.date_of_birth) %></td>
+  <!--
+  <td><%#= student.gender %></td>
+  <td><%#= formatted_date(student.date_of_birth) %></td>-->
   <td><%= student.contact_no %></td>
-  <td><%= student.qualification %></td>
-  <td><%= student.passout_pursuing %></td>
-  <td><%= formatted_date(student.date_of_joining) %></td>
-  <td><%= student.course %></td>
-  <td><%= student.address %></td>
-  <td><%= student.address2 %></td>
-  <td><%= student.city %></td>
-  <td><%= student.state %></td>
-  <td><%= student.pincode %></td>
+  <!--
+  <td><%#= student.qualification %></td>
+  <td><%#= student.passout_pursuing %></td>
+  <td><%#= formatted_date(student.date_of_joining) %></td>
+  <td><%#= student.course %></td>
+  <td><%#= student.address %></td>
+  <td><%#= student.address2 %></td>
+  <td><%#= student.city %></td>
+  <td><%#= student.state %></td>
+  <td><%#= student.pincode %></td>
+  -->
   <td>
   	<div class="dropdown">
-	  	<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action
+	  	<button class="btn-sm mt-2 btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action
 	  	</button>
 		  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 		    <%= link_to 'Show', student ,class: "dropdown-item"%>
